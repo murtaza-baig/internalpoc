@@ -9,8 +9,8 @@ phases:
     runtime-versions:
       nodejs: 10
     commands: #https://learning.getpostman.com/docs/postman/collection-runs/command-line-integration-with-newman/
-      - sudo npm install -g newman
-      - sudo yum install -y jq
+      - npm install newman
+      - yum install -y jq
 
   pre_build:
     commands:
