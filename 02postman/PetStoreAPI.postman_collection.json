@@ -61,61 +61,6 @@
 			"response": []
 		},
 		{
-			"name": "list pets Copy",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "50968bbc-858a-4d2b-b98f-9a02c1676bf5",
-						"exec": [
-							"/**",
-							" * ",
-							" */ ",
-							"pm.test(\"Is valid response with json array in body\", function () {",
-							"    ",
-							"    // assert that the status code is 200",
-							"    pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants",
-							"     ",
-							"    // assert that the response has a valid JSON body",
-							"    pm.response.to.be.withBody;",
-							"     ",
-							"    pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed",
-							"     ",
-							"    //make sure we have a valid json array",
-							"    pm.expect(pm.response.json()).to.be.an('array').but.not.an('object');",
-							"    ",
-							"});",
-							"",
-							"pm.test(\"Has Content-Type header\", function () {",
-							"    pm.expect(responseHeaders.hasOwnProperty(\"Content-Type\"));",
-							"});",
-							"",
-							"pm.test(\"Is response time is less than 700ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(700);",
-							"});",
-							"",
-							"",
-							"",
-							"//https://www.chaijs.com/api/bdd/#method_a",
-							"//pm.test('is valid Array', () => pm.expect(pm.response.json()).to.be.an('array').but.not.an('object'))"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"id": "1af7709a-34b2-4857-bdcf-148edd2e0ae5",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{apigw-root}}/pets"
-			},
-			"response": []
-		},
-		{
 			"name": "add pet",
 			"event": [
 				{
